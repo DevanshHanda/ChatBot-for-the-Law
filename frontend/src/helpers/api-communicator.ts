@@ -12,16 +12,6 @@ export const loginUser = async (email: string, password: string) => {
     throw new Error("Unable to login");
   }
   const data = await res.data;
-  
-  // // giving the prompt only once
-  // const first_message = "I am playing a game in which you are a chatbot as well a MongoDB data retriever, it is upto you to understand weather you as a chatbot can answer my questions answer my questions or you need to write a no sql query to fetch it from the law database. the convserations and queries that i am going to ask you next are a part of that experiment";
-  // const res2 = await axios.post("/chat/new", { first_message });
-  // if (res2.status !== 200) {
-  //   throw new Error("Unable to send chat");
-  // }
-
-
-
   return data;
 };
 
@@ -62,7 +52,7 @@ const evalString = `
 async function retrieveData(filter, projection) {
   let client;
   try {
-      const uri = "mongodb+srv://dnd_chatbot:ciipHFyZOMwmOyZK@cluster0.hjw1hhx.mongodb.net/chatbot?retryWrites=true&w=majority"; // Your MongoDB connection URI
+      const uri = ""; // Your Database connection URI
   
       const { MongoClient } = await import('mongodb');
       client = new MongoClient(uri);
@@ -173,8 +163,7 @@ if (startIndex !== -1 && endIndex !== -1) {
 //       const { query } = extractComponents(queryString);
 
 //       // Connection URI and client
-//       const uri = "mongodb+srv://dnd_chatbot:ciipHFyZOMwmOyZK@cluster0.hjw1hhx.mongodb.net/chatbot?retryWrites=true&w=majority"; // Your MongoDB connection URI
-  
+//       const uri = add the database address
 //       const client = new MongoClient(uri);
 
 //       await client.connect();
@@ -221,8 +210,7 @@ if (startIndex !== -1 && endIndex !== -1) {
   
   //   try {
   //     const { query } = extractComponents(queryString);
-  //     const uri = "mongodb+srv://dnd_chatbot:ciipHFyZOMwmOyZK@cluster0.hjw1hhx.mongodb.net/chatbot?retryWrites=true&w=majority";
-      
+  //     const uri = add the address of database
   //     connectToClient(uri)
   //       .then((connectedClient) => {
   //         client = connectedClient;
